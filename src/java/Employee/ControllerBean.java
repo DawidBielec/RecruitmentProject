@@ -7,7 +7,7 @@ package Employee;
 
 /**
  *
- * @author Ada
+ * @author Dawid
  */
 import java.util.ArrayList;
 import java.util.List;
