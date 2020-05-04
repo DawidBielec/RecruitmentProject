@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+     
+    <h:head>
+        <title>Employee</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{controllerBean.employeelist}" var="emp">
+              <h:column> 
+                <f:facet name="header">Employee Name</f:facet>
+                <h:outputText value="#{emp.employeeName}"></h:outputText>
+              </h:column>      
+              <h:column> 
+                <f:facet name="header">Employee Surname</f:facet>
+                <h:outputText value="#{emp.employeeSurname}"></h:outputText>
+              </h:column>   
+              <h:column> 
+                <f:facet name="header">Employee Address</f:facet>
+                <h:outputText value="#{emp.employeeAddres}"></h:outputText>
+              </h:column>   
+              <h:column> 
+                <f:facet name="header">Employee Email</f:facet>
+                <h:outputText value="#{emp.employeeEmail}"></h:outputText>
+              </h:column>   
+                
+              <h:column> 
+                  <h:commandButton value="Select" action="#{controllerBean.setEmployee(emp)}"></h:commandButton>
+              </h:column>  
+                
+            </h:dataTable>
+            
+            <hr/>
+            Name: <h:inputText value="#{controllerBean.employee.employeeName}"></h:inputText>
+            Surname: <h:inputText value="#{controllerBean.employee.employeeName}"></h:inputText>
+            Address: <h:inputText value="#{controllerBean.employee.employeeName}"></h:inputText>
+            Email: <h:inputText value="#{controllerBean.employee.employeeName}"></h:inputText>
+                 
+            <commandButton value="update" action="#{controllerBean.update()}"></commandButton>
+            <commandButton value="delete" action="#{controllerBean.delete()}"></commandButton>
+            <commandButton value="add" action="#{controllerBean.add()}"></commandButton>
+            
+        </h:form>
+           
+    </h:body>
+</html>
+
+
